@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c92dc48b-abac-474b-8c6c-19bde5cc3b75" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="F:\maven\apache-maven-3.3.9\repository\repository" />
+        <option name="mavenHome" value="F:/maven/apache-maven-3.3.9" />
+        <option name="nonRecursive" value="true" />
+        <option name="userSettingsFile" value="F:\maven\apache-maven-3.3.9\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="excludeTargetFolder" value="false" />
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="delegateBuildToMaven" value="true" />
+    <option name="jreName" value="#JAVA_HOME" />
+    <option name="runMavenInBackground" value="false" />
+    <option name="vmOptions" value="-DarchetypeCatalog=internal" />
+  </component>
+  <component name="ProjectId" id="1QGQPpzo5LCaQOjeqS2dH0gRp9J" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1562074453150" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\maven\Nintendo\myBatis\src\main\resources\com\Nintendo\dao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.Nintendo.mybatis.domain" />
+      <recent name="com.Nintendo.mybatis.dao" />
+      <recent name="com.Nintendo.domain" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\maven\Nintendo\myBatis03\src\main\resources" />
+      <recent name="E:\maven\Nintendo\myBatis02\src\main\resources" />
+      <recent name="E:\maven\Nintendo" />
+      <recent name="E:\maven\Nintendo\myBatis\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.Test.Demo13">
+    <configuration name="Test.Demo09" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myBatis03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Nintendo.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Nintendo.test" />
+      <option name="MAIN_CLASS_NAME" value="com.Nintendo.test.Test" />
+      <option name="METHOD_NAME" value="Demo09" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.Demo10" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myBatis03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Nintendo.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Nintendo.test" />
+      <option name="MAIN_CLASS_NAME" value="com.Nintendo.test.Test" />
+      <option name="METHOD_NAME" value="Demo10" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.Demo11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myBatis03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Nintendo.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Nintendo.test" />
+      <option name="MAIN_CLASS_NAME" value="com.Nintendo.test.Test" />
+      <option name="METHOD_NAME" value="Demo11" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.Demo12" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myBatis03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Nintendo.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Nintendo.test" />
+      <option name="MAIN_CLASS_NAME" value="com.Nintendo.test.Test" />
+      <option name="METHOD_NAME" value="Demo12" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test.Demo13" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="myBatis03" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.Nintendo.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.Nintendo.test" />
+      <option name="MAIN_CLASS_NAME" value="com.Nintendo.test.Test" />
+      <option name="METHOD_NAME" value="Demo13" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.Test.Demo13" />
+        <item itemvalue="JUnit.Test.Demo12" />
+        <item itemvalue="JUnit.Test.Demo11" />
+        <item itemvalue="JUnit.Test.Demo10" />
+        <item itemvalue="JUnit.Test.Demo09" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c92dc48b-abac-474b-8c6c-19bde5cc3b75" name="Default Changelist" comment="" />
+      <created>1561720086175</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561720086175</updated>
+      <workItem from="1561720087498" duration="5488000" />
+      <workItem from="1561726110364" duration="82000" />
+      <workItem from="1561726226731" duration="71000" />
+      <workItem from="1561726322772" duration="5086000" />
+      <workItem from="1561771008313" duration="2185000" />
+      <workItem from="1561773237992" duration="7050000" />
+      <workItem from="1561790475404" duration="6388000" />
+      <workItem from="1561876739153" duration="2339000" />
+      <workItem from="1561879124761" duration="15903000" />
+      <workItem from="1561943401690" duration="162000" />
+      <workItem from="1561951021181" duration="267000" />
+      <workItem from="1561963014273" duration="2134000" />
+      <workItem from="1561965232919" duration="4813000" />
+      <workItem from="1562049371000" duration="1413000" />
+      <workItem from="1562050887786" duration="1605000" />
+      <workItem from="1562052558372" duration="17070000" />
+      <workItem from="1562136270346" duration="159000" />
+      <workItem from="1563105299079" duration="2301000" />
+      <workItem from="1563157812002" duration="617000" />
+      <workItem from="1563620467734" duration="57000" />
+      <workItem from="1564060866187" duration="642000" />
+      <workItem from="1567394433104" duration="12000" />
+      <workItem from="1568550322662" duration="54000" />
+      <workItem from="1568625441690" duration="24000" />
+      <workItem from="1568690521288" duration="669000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Test_Demo10 - 2019.07.02 at 18h 05m 25s.xml">
+      <configuration name="Test.Demo10" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_Demo10 - 2019.07.02 at 18h 06m 33s.xml">
+      <configuration name="Test.Demo10" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_Demo11 - 2019.07.02 at 19h 41m 49s.xml">
+      <configuration name="Test.Demo11" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_Demo11 - 2019.07.02 at 19h 42m 55s.xml">
+      <configuration name="Test.Demo11" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_Demo12 - 2019.07.02 at 19h 54m 48s.xml">
+      <configuration name="Test.Demo12" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_Demo13 - 2019.07.02 at 20h 21m 24s.xml">
+      <configuration name="Test.Demo13" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_Demo13 - 2019.07.02 at 20h 26m 03s.xml">
+      <configuration name="Test.Demo13" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_Demo13 - 2019.07.02 at 20h 27m 05s.xml">
+      <configuration name="Test.Demo13" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_Demo13 - 2019.07.02 at 20h 27m 37s.xml">
+      <configuration name="Test.Demo13" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Test_Demo13 - 2019.07.02 at 20h 32m 12s.xml">
+      <configuration name="Test.Demo13" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>com.Nintendo</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: junit:junit:4.12</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--根标签configuration标签-->
+<configuration>
+    <properties resource="jdbcinfo.properties">
+        <property name="username" value="root"/>
+    </properties>
+    <typeAliases>
+        <!--
+            每一个typeAlias标签就是配置一个别名
+            type是要配置别名的那个类的全限定名
+            alias是配置的别名
+        -->
+<!--<typeAlias type="com.Nintendo.domain.User" alias="user"/>-->
+        <!--
+           通过package标签进行包扫描
+           name表示要扫描的包名
+
+           别名就是该类的类名，不区分大小写
+       -->
+        <package name="com.Nintendo.mybatis.domain"/>
+    </typeAliases>
+
+    <!--配置当前持久层环境-->
+<environments default="mysql">
+    <environment id="mysql">
+        <!--表示使用jdbc的事务-->
+        <transactionManager type="JDBC"></transactionManager>
+        <!--配置数据源环境,type为pooled表示使用当前自带的连接池-->
+        <dataSource type="POOLED">
+            <!--配置基本参数-->
+            <property name="driver" value="${driver}"/>
+            <property name="url" value="${url}"/>
+            <property name="username" value="${username}"/>
+            <property name="password" value="${password}"/>
+        </dataSource>
+    </environment>
+</environments>
+    <!--程序加载只会加载主配置文件,通过mappers告诉框架要加载什么文件-->
+    <mappers>
+        <!--使用包扫描的方式，统一加载dao包中的映射配置文件-->
+        <package name="com.Nintendo.mybatis.dao"/>
+     <!--   <mapper resource="com/Nintendo/dao/UserDao.xml"/>-->
+    </mappers>
+</configuration>

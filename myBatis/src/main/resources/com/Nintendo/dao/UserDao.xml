@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--根标签,属性namespace,属性值应该为对应的接口的全限定名-->
+<mapper namespace="com.Nintendo.dao.Userdao">
+
+    <select id="findAll" resultType="com.Nintendo.domain.User">
+        select * from user
+    </select>
+    <!--添加用户-->
+    <insert id="addUser" parameterType="com.Nintendo.domain.User">
+        insert into user values (#{id},#{username},#{birthday},#{sex},#{address})
+        <!--
+       keyColumn对应表中的字段名
+       keyProperty对应JavaBean的属性名
+       order表示这个查询是执行在添加之前还是之后
+     -->
+        <selectKey keyColumn="id" keyProperty="id" resultType="int" order="AFTER">
+           select last_insert_id()
+        </selectKey>
+    </insert>
+    <!--删除语句-->
+    <delete id="DeleteUserById" parameterType="int">
+    /*如果参数是简单数据类型,只需要在大括号里写占位符就可以*/
+        delete from user where id=#{id}
+    </delete>
+    <!--修改语句-->
+    <update id="UpdateUserById" parameterType="map">
+        update user set  username=#{username},address=#{address} where id=#{id}
+    </update>
+    <update id="UpdateUserByI" parameterType="com.Nintendo.domain.User">
+        update user set username=#{username},address=#{address} where id=#{id}
+    </update>
+    <!--查询语句-->
+    <select id="QueryUserByid" parameterType="int" resultType="com.Nintendo.domain.User">
+        select * from USER  where id=#{id}
+    </select>
+    <select id="QueryUserByi" parameterType="int" resultType="map">
+        select * from user where id=#{id}
+    </select>
+    <select id="QueryUserByusername" parameterType="int" resultType="string">
+        select username from user where id=#{id}
+    </select>
+    <select id="QueryUserCount" resultType="long">
+        select count(*) from user
+    </select>
+    <select id="QueryUserByLike" parameterType="string" resultType="com.Nintendo.domain.User">
+        select  * from  user where username like #{username}
+    </select>
+    <select id="QueryUserByLik" parameterType="string" resultType="com.Nintendo.domain.User">
+        select * from user where username like '%${value}%'
+    </select>
+    <select id="QueryUserByJavabean" parameterType="com.Nintendo.domain.QueryVo" resultType="com.Nintendo.domain.User">
+        select * from user where username like #{user.username}
+    </select>
+    <!--查询到的结果集的字段名和要封装结果的JavaBean的属性名不一致-->
+<!--<select id="findUserinfoById" parameterType="com.Nintendo.domain.User" resultType="com.Nintendo.domain.Userinfo">
+    select id userId,username,sex userSex,birthday userBirthday,address userAddress from user where id=#{id}
+</select>-->
+    <select id="findUserinfoById" parameterType="com.Nintendo.domain.User" resultMap="userinfoMap">
+        select * from user where id=#{id}
+    </select>
+    <!--resultmap表示自定义映射规则,id作为表示被那个查询语句使用,type表示映射规则决定的javabean类型-->
+    <resultMap id="userinfoMap" type="Userinfo">
+        <!--主键字段的映射通过id标签,-->
+        <id column="id" property="userId"/>
+        <!--其他字段的映射通过result标签-->
+        <result column="sex" property="userSex"/>
+        <result column="birthday" property="userBirthday"/>
+        <result column="address" property="userAddress"/>
+    </resultMap>
+</mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Nintendo.mybatis.dao.Userdao">
+    <cache/>
+<select id="findUserAll" parameterType="int" resultType="user">
+    select * from user where id=#{id}
+</select>
+    <resultMap id="uam" type="user">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="birthday" property="birthday"/>
+        <result column="sex" property="sex"/>
+        <result column="address" property="address"/>
+        <collection property="account" ofType="account" column="id" select="com.Nintendo.mybatis.dao.Accountdao.findaccountss">
+            <id column="aid" property="aid"/>
+            <result column="money" property="money"/>
+            <result column="uid" property="uid"/>
+        </collection>
+    </resultMap>
+    <!--配置文件一对多映射-->
+    <select id="finduse" parameterType="int" resultMap="uam">
+        select * from USER where  id=#{id}
+    </select>
+    <insert id="insertUserIndex" parameterType="map">
+    <selectKey keyColumn="id" keyProperty="id" order="AFTER" resultType="int">
+        select last_insert_id()
+    </selectKey>
+        insert into user (username,birthday,sex,address) values (#{a},#{b},#{c},#{d})
+    </insert>
+</mapper>

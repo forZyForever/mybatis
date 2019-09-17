@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.Nintendo.mybatis.dao.Userdao">
+    <!--根据id username查找用户-->
+    <select id="findUser" parameterType="string" resultType="user">
+        select * from user
+        <if test="value!=null">
+            where username like #{username}
+        </if>
+    </select>
+    <!--根据id和username查询用户,为空则查找所有,不为空则按照条件查询-->
+    <select id="findUserByIdAndUsername" parameterType="map" resultType="user">
+        /*如果不写where标签则需要后面写where 1=1*/
+        select * from user
+        <where>
+        <if test="id!=null and id!= '' ">
+           id=#{id}
+        </if>
+        <if test="username!=null and id!=''">
+            and username=#{username}
+        </if>
+        </where>
+    </select>
+    <!--多个id参数查询用户-->
+    <select id="findUserByIds" parameterType="list" resultType="user">
+        select * from user
+        /*遍历时
+        collection表示要遍历的集合
+        item表示遍历出来的每一个元素
+        index表示遍历每个元素的小标
+        separator表示遍历出来的每个元素的之间的占位符
+        open表示第一个数据之间添加东西
+         close表示最后一个数据之间添加东西
+        */
+       <foreach collection="list" item="id" open="where id in (" close=")" separator=",">
+           #{id}
+       </foreach>
+    </select>
+    <!--根据账号的id查询账号信息，并且将该账号对应的用户信息查询出来(一对一)-->
+      <select id="findAccountUserByAid" parameterType="int" resultMap="AccountUserMap">
+          select * from user u,account a where u.id=a.uid and aid=#{aid}
+      </select>
+    <resultMap id="AccountUserMap" type="account">
+         <!--自定义映射自己可以匹配的上的字段,-->
+        <id column="aid" property="aid"/>
+        <result column="money" property="money"/>
+        <result column="uid" property="uid"/>
+        <!--javabean字段-->
+        <association property="user" javaType="user">
+            <id column="id" property="id"/>
+            <result column="username" property="username"/>
+            <result column="birthday" property="birthday"/>
+            <result column="sex" property="sex"/>
+            <result column="address" property="address"/>
+        </association>
+    </resultMap>
+    <!--根据用户的id查询用户信息，并且查询该用户对应的所有账号(一对多)-->
+    <select id="findAllAccountUserByid" parameterType="int" resultMap="UserAccountMap">
+        SELECT * FROM USER a,account b WHERE a.`id`=b.`uid` AND id=#{id}
+    </select>
+    <resultMap id="UserAccountMap" type="user">
+        <!--映射本身的一些属性-->
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="birthday" property="birthday"/>
+        <result column="sex" property="sex"/>
+        <result column="address" property="address"/>
+        <!--一对多映射,collection来表示被映射的java-->
+        <collection property="account" ofType="account">
+            <id column="aid" property="aid"/>
+            <result column="money" property="money"/>
+            <result column="uid" property="uid"/>
+        </collection>
+    </resultMap>
+    <!--根据用户的id查询用户信息以及该用户对应的角色信息(多对多)-->
+    <select id="findUserRoleById" parameterType="int" resultMap="UserRoleMap">
+        SELECT * FROM USER a,role b,`user-role` c WHERE a.`id`=c.`uid` AND b.`rid`=c.`rid` AND a.`id`=#{id}
+    </select>
+    <resultMap id="UserRoleMap" type="user">
+        <!--映射本身的一些属性-->
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="birthday" property="birthday"/>
+        <result column="sex" property="sex"/>
+        <result column="address" property="address"/>
+        <collection property="role" ofType="role">
+            <id column="rid" property="rid"/>
+            <result column="rname" property="rname"/>
+            <result column="rdesc" property="rdesc"/>
+        </collection>
+    </resultMap>
+    <!--查询用户信息，并且获取该用户的所有账号信息，并且还获取该用户的所有角色(四张表)-->
+       <select id="findUserAll" parameterType="int" resultMap="URAMap">
+           SELECT * FROM USER u,account a,role r,`user-role` ur WHERE u.`id`=a.`uid` AND u.`id`=ur.`uid` AND r.`rid`=ur.`rid` AND u.`id`=#{id}
+       </select>
+    <resultMap id="URAMap" type="user">
+        <!--映射本身的一些属性-->
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="birthday" property="birthday"/>
+        <result column="sex" property="sex"/>
+        <result column="address" property="address"/>
+        <collection property="account" ofType="account">
+            <id column="aid" property="aid"/>
+            <result column="money" property="money"/>
+            <result column="uid" property="uid"/>
+        </collection>
+        <collection property="role" ofType="role">
+            <id column="rid" property="rid"/>
+            <result column="rname" property="rname"/>
+            <result column="rdesc" property="rdesc"/>
+        </collection>
+    </resultMap>
+    <!--查询用户信息，并且获取该用户的所有账号信息，并且获取该用户的所有角色信息，并且获取该用户的身份证信息(五张表)-->
+    <select id="findUserTrueAll" parameterType="int" resultMap="UARCMap">
+SELECT * FROM USER u,account a,role r,`user-role` ur,card c WHERE u.id=a.uid AND u.id=ur.uid AND r.rid=ur.rid AND u.cid=c.cid AND u.id=#{id}
+    </select>
+<resultMap id="UARCMap" type="user">
+    <!--映射本身的一些属性-->
+    <id column="id" property="id"/>
+    <result column="username" property="username"/>
+    <result column="birthday" property="birthday"/>
+    <result column="sex" property="sex"/>
+    <result column="address" property="address"/>
+    <association property="card" javaType="card">
+        <id column="cid" property="cid"/>
+        <result column="cardNumber" property="cardNumber"/>
+        <result column="cardAddress" property="cardAddress"/>
+    </association>
+    <collection property="account" ofType="account">
+        <id column="aid" property="aid"/>
+        <result column="money" property="money"/>
+        <result column="uid" property="uid"/>
+    </collection>
+    <collection property="role" ofType="role">
+        <id column="rid" property="rid"/>
+        <result column="rname" property="rname"/>
+        <result column="rdesc" property="rdesc"/>
+    </collection>
+</resultMap>
+</mapper>
